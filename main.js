@@ -5,7 +5,7 @@ var core = {
     this.focus = (ascend ? "navbar" : "content");
   },
   handleInput: function(input) {
-    console.log("input: " + input);
+    // console.log("input: " + input);
 
     if (input == "up") {
       this.shiftFocus(true);

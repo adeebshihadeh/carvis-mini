@@ -1,14 +1,17 @@
 var navbar = {
-  setScreen: function(id) {
+  setActiveTab: function(id) {
     $(".navbar-item").removeClass("active")
     $("#" + id).addClass("active");
   },
+  setHoverTab: function(id) {
+    $(".navbar-item").removeClass("hover")
+    $("#" + id).addClass("hover");
+  },
   incrementTab: function(right) {
-    var index = $(".navbar-item.active").index() + (right ? 1 : -1);
+    var index = $(".navbar-item.hover").index() + (right ? 1 : -1);
 
     if (index >= 0 && index < $(".navbar-item").length) {
-      this.setScreen($($(".navbar-item")[index]).text());
-      console.log($($(".navbar-item")[index]).text());
+      this.setHoverTab($($(".navbar-item")[index]).text());
     }
   },
   handleInput: function(input) {
@@ -18,7 +21,8 @@ var navbar = {
       } else if (input == "left" || input == "twistLeft") {
         this.incrementTab(false);
       } else if (input == "select") {
-        content.setScreen($(".navbar-item.active").text());
+        content.setScreen($(".navbar-item.hover").text());
+        this.setActiveTab($(".navbar-item.hover").text());
       }
     }
   }
