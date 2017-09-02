@@ -7,6 +7,7 @@
 
 <script src="jquery.min.js"></script>
 
+<script src="main.js"></script>
 
 <!-- top bar -->
 
@@ -55,17 +56,15 @@ $(document).ready(function() {
 
 </div>
 
+<script src="navbar.js"></script>
 
 <script type="text/javascript">
 
-  function setActive(id) {
-    $(".navbar-item").removeClass("active")
-    $("#" + id).addClass("active");
-  }
-
   $(document).ready(function() {
     $(".navbar-item").css("width", (100/$(".navbar-item").length) + "vw");
-    setActive("nav");
+    navbar.setScreen("nav");
+
+    core.registerModule(navbar);
   });
 
 </script>
@@ -101,6 +100,8 @@ $(document).ready(function() {
 
 
 
+<script src="audio.js"></script>
+
 <script type="text/javascript">
 
   function setScreen(screenid) {
@@ -109,10 +110,10 @@ $(document).ready(function() {
   }
 
   $(document).ready(function() {
-
     $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
     setScreen("nav");
 
+    core.registerModule(audio);
   });
 
 </script>

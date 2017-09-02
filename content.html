@@ -29,6 +29,8 @@
 
 
 
+<script src="audio.js"></script>
+
 <script type="text/javascript">
 
   function setScreen(screenid) {
@@ -37,10 +39,10 @@
   }
 
   $(document).ready(function() {
-
     $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
     setScreen("nav");
 
+    core.registerModule(audio);
   });
 
 </script>
