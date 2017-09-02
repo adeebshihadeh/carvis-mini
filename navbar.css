@@ -1,0 +1,24 @@
+.navbar {
+  height: 55px;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  display: table-cell;
+}
+
+.navbar-item {
+  height: inherit;
+  width: 33.33vw;
+  line-height: 1.5;
+  font-size: 35px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+
+.navbar-item.active {
+  background-color: brown;
+}

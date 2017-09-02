@@ -1,0 +1,16 @@
+.topbar {
+  height: 60px;
+  width: 100vw;
+  line-height: 1.5;
+  background-color: black;
+  color: white;
+}
+
+.topbar-item {
+  color: white;
+  height: 60px;
+  margin: 0;
+  padding: 0px 25px;
+  font-size: 40px;
+  float: left;
+}

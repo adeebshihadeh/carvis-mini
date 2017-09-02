@@ -1,0 +1,46 @@
+
+<!-- screens -->
+
+<link rel="stylesheet" type="text/css" href="content.css">
+
+<div class="content">
+  
+  <div id="nav-screen" class="screen">
+    
+  nav
+
+  </div>
+
+  <div id="audio-screen" class="screen">
+    
+  audio
+
+  </div>
+
+  <div id="phone-screen" class="screen">
+    
+  phone
+
+  </div>
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+  function setScreen(screenid) {
+    $(".screen").hide();
+    $("#" + screenid + "-screen").show();
+  }
+
+  $(document).ready(function() {
+
+    $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
+    setScreen("nav");
+
+  });
+
+</script>

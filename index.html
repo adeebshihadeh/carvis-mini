@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <title>carvis-mini</title>
+</head>
+<body style="width: 100vw; height: 100vh; margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+
+<script src="jquery.min.js"></script>
+
+
+<!-- top bar -->
+
+<link rel="stylesheet" type="text/css" href="topbar.css">
+
+
+<div class="topbar">
+  
+  <p id="topbar-time" class="topbar-item">0:00</p>
+
+  <!-- phone bluetooth status -->
+
+  <!-- phone notifications? -->
+
+</div>
+
+<script type="text/javascript">
+
+
+function updateTime() {
+  var time = new Date();
+  $("#topbar-time").text(time.getHours() + ":" + (time.getMinutes() < 10 ? "0" : "") + time.getMinutes());
+}
+
+setInterval(function() {
+  updateTime();
+}, 2000);
+
+
+$(document).ready(function() {
+  updateTime();
+});
+
+
+</script>
+
+<!-- navbar -->
+
+<link rel="stylesheet" type="text/css" href="navbar.css">
+
+<div class="navbar">
+  
+  <p id="nav" class="navbar-item">nav</p>
+  <p id="audio" class="navbar-item">audio</p>
+  <p id="phone" class="navbar-item">phone</p>
+
+</div>
+
+
+<script type="text/javascript">
+
+  function setActive(id) {
+    $(".navbar-item").removeClass("active")
+    $("#" + id).addClass("active");
+  }
+
+  $(document).ready(function() {
+    $(".navbar-item").css("width", (100/$(".navbar-item").length) + "vw");
+    setActive("nav");
+  });
+
+</script>
+
+
+<!-- screens -->
+
+<link rel="stylesheet" type="text/css" href="content.css">
+
+<div class="content">
+  
+  <div id="nav-screen" class="screen">
+    
+  nav
+
+  </div>
+
+  <div id="audio-screen" class="screen">
+    
+  audio
+
+  </div>
+
+  <div id="phone-screen" class="screen">
+    
+  phone
+
+  </div>
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+  function setScreen(screenid) {
+    $(".screen").hide();
+    $("#" + screenid + "-screen").show();
+  }
+
+  $(document).ready(function() {
+
+    $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
+    setScreen("nav");
+
+  });
+
+</script>
+
+</body>
+</html>
