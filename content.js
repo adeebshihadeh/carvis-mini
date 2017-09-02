@@ -8,6 +8,4 @@ var content = {
     $(".screen").hide();
     $("#" + id + "-screen").show();
   }
-
-
 };

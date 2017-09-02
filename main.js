@@ -1,5 +1,3 @@
-
-
 var core = {
   focus: "content",
   modules: [],

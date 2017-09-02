@@ -9,8 +9,6 @@ var navbar = {
     if (index >= 0 && index < $(".navbar-item").length) {
       this.setScreen($($(".navbar-item")[index]).text());
       console.log($($(".navbar-item")[index]).text());
-    } else {
-      console.log(index);
     }
   },
   handleInput: function(input) {
