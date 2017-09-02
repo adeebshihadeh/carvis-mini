@@ -19,6 +19,8 @@ var navbar = {
         this.incrementTab(true);
       } else if (input == "left" || input == "twistLeft") {
         this.incrementTab(false);
+      } else if (input == "select") {
+        content.setScreen($(".navbar-item.active").text());
       }
     }
   }

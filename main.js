@@ -21,6 +21,8 @@ var core = {
 
     } else if (input == "twistLeft") {
 
+    } else if (input == "select") {
+
     }
 
     this.broadcastInput(input);
@@ -63,6 +65,10 @@ $(document).keydown(function(e) {
       break;
     case 39: // right arrow
       core.handleInput("right");
+      break;
+
+    case 32: // spacebar
+      core.handleInput("select");
       break;
 
     default:

@@ -100,19 +100,16 @@ $(document).ready(function() {
 
 
 
+<script src="content.js"></script>
 <script src="audio.js"></script>
 
 <script type="text/javascript">
 
-  function setScreen(screenid) {
-    $(".screen").hide();
-    $("#" + screenid + "-screen").show();
-  }
-
   $(document).ready(function() {
     $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
-    setScreen("nav");
+    content.setScreen("nav");
 
+    core.registerModule(content);
     core.registerModule(audio);
   });
 
