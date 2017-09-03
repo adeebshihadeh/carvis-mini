@@ -11,13 +11,10 @@
 
 .placeholder-text {
   text-align: center;
-  font-size: 2rem;
+  font-size: 4rem;
   color: white;
   margin: 0;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-
 }
-
-/*   style="text-align: center; color: white; margin: 0; position: relative; top: 50%; transform: translateY(-50%);"    */
