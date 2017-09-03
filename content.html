@@ -42,6 +42,7 @@
   $(document).ready(function() {
     $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
     navbar.setActiveTab("audio");
+    navbar.setHoverTab("audio");
     content.setScreen("audio");
 
     core.registerModule(content);

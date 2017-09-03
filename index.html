@@ -62,7 +62,8 @@ $(document).ready(function() {
 
   $(document).ready(function() {
     $(".navbar-item").css("width", (100/$(".navbar-item").length) + "vw");
-    navbar.setActiveTab("nav");
+    // navbar.setActiveTab("audio");
+    // navbar.setHoverTab("audio");
 
     core.registerModule(navbar);
   });
@@ -113,6 +114,7 @@ $(document).ready(function() {
   $(document).ready(function() {
     $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
     navbar.setActiveTab("audio");
+    navbar.setHoverTab("audio");
     content.setScreen("audio");
 
     core.registerModule(content);
