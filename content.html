@@ -2,6 +2,7 @@
 <!-- screens -->
 
 <link rel="stylesheet" type="text/css" href="content.css">
+<link rel="stylesheet" type="text/css" href="audio.css">
 
 <div class="content">
   
@@ -13,16 +14,24 @@
 
   <div id="audio-screen" class="screen">
     
-  audio
+    <ul id="audio-source-selector">
+      <li id="spotify">spotify</li>
+      <li id="bluetooth">bluetooth</li>
+      <li id="aux">aux</li>
+      <li id="fm-radio">fm-radio</li>
+    </ul>
 
-  </div>
+    <div>
+      
+    </div id="audio-main-content">
+
+    </div>
 
   <div id="phone-screen" class="screen">
     
   phone
 
   </div>
-
 
 </div>
 
@@ -36,7 +45,8 @@
 
   $(document).ready(function() {
     $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
-    content.setScreen("nav");
+    navbar.setActiveTab("audio");
+    content.setScreen("audio");
 
     core.registerModule(content);
     core.registerModule(audio);

@@ -1,0 +1,22 @@
+#audio-source-selector {
+  width: 20vw;
+  margin: 0;
+  padding: 0;
+}
+
+#audio-source-selector > li {
+  background-color: white;
+  color: black;
+  width: 100%;
+  list-style-type: none;
+  font-size: 35px;
+  padding: 10px 0px;
+}
+
+#audio-source-selector > li.hover {
+  font-size: 45px;
+}
+
+#audio-source-selector > li.active {
+  color: blue;
+}

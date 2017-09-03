@@ -74,3 +74,11 @@ $(document).keydown(function(e) {
       break;
   }
 });
+
+$(document).bind('mousewheel', function(e) {
+  if(e.originalEvent.wheelDelta / 120 > 0) {
+    core.handleInput("twistRight");
+  } else{
+    core.handleInput("twistLeft");
+  }
+});
