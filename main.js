@@ -27,12 +27,16 @@ var core = {
   },
   broadcastInput: function(input) {
     for (module in this.modules) {
-      this.modules[module].handleInput(input);
+      if (this.modules[module].handleInput) {
+        this.modules[module].handleInput(input); 
+      }
     }
   },
   registerModule: function(module) {
     this.modules.push(module);
-  }
+    module.init();
+  },
+  init: function() {}
 };
 
 
@@ -81,4 +85,8 @@ $(document).bind('mousewheel', function(e) {
   } else{
     core.handleInput("twistLeft");
   }
+});
+
+$(document).ready(function() {
+  core.init();
 });

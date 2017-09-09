@@ -9,11 +9,51 @@
 
 <script src="main.js"></script>
 
-{topbar}
 
-{navbar}
+<!-- topbar -->
 
-{content}
+{components/topbar/topbar.html}
+
+
+{components/navbar/navbar.html}
+
+
+
+<!-- screens -->
+
+<link rel="stylesheet" type="text/css" href="components/content/content.css">
+
+<div class="content">
+  
+  <div id="nav-screen" class="screen">
+   {components/nav/nav.html}
+  </div>
+
+  <div id="audio-screen" class="screen">
+    {components/audio/audio.html}
+  </div>
+
+  <div id="phone-screen" class="screen">
+    {components/phone/phone.html}
+  </div>
+
+</div>
+
+<script src="components/content/content.js"></script>
+
+
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    core.registerModule(navbar);
+    core.registerModule(topbar);
+    core.registerModule(content);
+    core.registerModule(audio);
+  });
+
+</script>
+
 
 </body>
 </html>

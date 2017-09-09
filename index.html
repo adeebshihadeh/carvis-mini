@@ -9,9 +9,12 @@
 
 <script src="main.js"></script>
 
+
+<!-- topbar -->
+
 <!-- top bar -->
 
-<link rel="stylesheet" type="text/css" href="topbar.css">
+<link rel="stylesheet" type="text/css" href="components/topbar/topbar.css">
 
 
 <div class="topbar">
@@ -24,29 +27,12 @@
 
 </div>
 
-<script type="text/javascript">
+<script type="text/javascript" src="components/topbar/topbar.js"></script>
 
-
-function updateTime() {
-  var time = new Date();
-  $("#topbar-time").text(time.getHours() + ":" + (time.getMinutes() < 10 ? "0" : "") + time.getMinutes());
-}
-
-setInterval(function() {
-  updateTime();
-}, 2000);
-
-
-$(document).ready(function() {
-  updateTime();
-});
-
-
-</script>
 
 <!-- navbar -->
 
-<link rel="stylesheet" type="text/css" href="navbar.css">
+<link rel="stylesheet" type="text/css" href="components/navbar/navbar.css">
 
 <div class="navbar">
   
@@ -56,7 +42,7 @@ $(document).ready(function() {
 
 </div>
 
-<script src="navbar.js"></script>
+<script src="components/navbar/navbar.js"></script>
 
 <script type="text/javascript">
 
@@ -64,38 +50,39 @@ $(document).ready(function() {
     $(".navbar-item").css("width", (100/$(".navbar-item").length) + "vw");
     // navbar.setActiveTab("audio");
     // navbar.setHoverTab("audio");
-
-    core.registerModule(navbar);
   });
 
 </script>
 
 
+
 <!-- screens -->
 
-<link rel="stylesheet" type="text/css" href="content.css">
-<link rel="stylesheet" type="text/css" href="audio.css">
+<link rel="stylesheet" type="text/css" href="components/content/content.css">
 
 <div class="content">
   
   <div id="nav-screen" class="screen">
-   <h1 class="placeholder-text"> nav </h1> 
+   <h1 class="placeholder-text">nav</h1>
   </div>
 
   <div id="audio-screen" class="screen">
-    
-    <ul id="audio-source-selector">
-      <li id="spotify">spotify</li>
-      <li id="bluetooth">bluetooth</li>
-      <li id="aux">aux</li>
-      <li id="fm-radio">fm-radio</li>
-    </ul>
+    <link rel="stylesheet" type="text/css" href="components/audio/audio.css">
 
-    <div>
-      
-    </div id="audio-main-content">
 
-    </div>
+<ul id="audio-source-selector">
+  <li id="spotify">spotify</li>
+  <li id="bluetooth">bluetooth</li>
+  <li id="aux">aux</li>
+  <li id="fm-radio">fm-radio</li>
+</ul>
+  
+<div id="audio-main-content">
+
+</div>
+
+<script type="text/javascript" src="components/audio/audio.js"></script>
+  </div>
 
   <div id="phone-screen" class="screen">
     <h1 class="placeholder-text">phone not connected</h1>
@@ -103,20 +90,15 @@ $(document).ready(function() {
 
 </div>
 
+<script src="components/content/content.js"></script>
 
 
-
-<script src="content.js"></script>
-<script src="audio.js"></script>
 
 <script type="text/javascript">
 
   $(document).ready(function() {
-    $(".content").css("height", ($("body").height() - ($(".topbar").height() + $(".navbar").height())) + "px");
-    navbar.setActiveTab("audio");
-    navbar.setHoverTab("audio");
-    content.setScreen("audio");
-
+    core.registerModule(navbar);
+    core.registerModule(topbar);
     core.registerModule(content);
     core.registerModule(audio);
   });

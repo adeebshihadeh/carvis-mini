@@ -25,5 +25,6 @@ var navbar = {
         this.setActiveTab($(".navbar-item.hover").text());
       }
     }
-  }
+  },
+  init: function() {}
 };

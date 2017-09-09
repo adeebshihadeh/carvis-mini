@@ -27,5 +27,6 @@ var audio = {
         }
       }
     }
-  }
+  },
+  init: function() {}
 };
