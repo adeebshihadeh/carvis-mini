@@ -1,9 +1,0 @@
-.pip_packages
-*.pyc
-__pycache__
-.cache
-build
-*.egg-info
-dist
-setuptools-*.zip
-

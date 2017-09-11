@@ -1,3 +1,0 @@
-fysom
-RPi.GPIO
-pyalsaaudio
