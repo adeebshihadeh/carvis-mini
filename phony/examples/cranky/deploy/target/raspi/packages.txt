@@ -1,0 +1,26 @@
+# For phony
+python-dev
+python-setuptools
+python-gobject
+python-dbus
+rfkill
+
+# For ofono
+glib2.0
+mobile-broadband-provider-info
+
+# For pulseaudio 7
+autoconf
+libtool
+intltool
+libsndfile1-dev
+libcap-dev
+libsystemd-daemon0
+libdbus-1-dev
+libspeex-dev
+libspeexdsp-dev
+libudev-dev
+libsbc-dev
+libbluetooth-dev
+libasound2-dev
+libjson-c-dev

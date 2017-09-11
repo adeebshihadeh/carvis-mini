@@ -1,0 +1,9 @@
+#!/bin/bash
+
+eval `dbus-launch --auto-syntax`
+
+python $@ - <<END
+from phony.examples.cranky.main import ApplicationMain
+main = ApplicationMain()
+main.run()
+END
