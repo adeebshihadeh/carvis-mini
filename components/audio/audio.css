@@ -11,6 +11,7 @@
   list-style-type: none;
   font-size: 35px;
   padding: 10px 0px;
+  float: left;
 }
 
 #audio-source-selector > li.hover {
@@ -19,4 +20,9 @@
 
 #audio-source-selector > li.active {
   color: blue;
+}
+
+#audio-source {
+  height: inherit;
+  width: 80vw;
 }

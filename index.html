@@ -74,15 +74,15 @@
   <li id="spotify">spotify</li>
   <li id="bluetooth">bluetooth</li>
   <li id="aux">aux</li>
-  <li id="fm-radio">fm-radio</li>
+  <li id="fmradio">fmradio</li>
 </ul>
   
 <div id="audio-main-content">
 
-  <div id="audio-source-fm">
+  <div id="fmradio-source" class="audio-source">
     <canvas id="fmradio_input_widget" width="600" height="300"></canvas>
 
-<script type="text/javascript" src="components/audio/components/audio/sources/fmradio/fmradio.js"></script>
+<script type="text/javascript" src="components/audio/sources/fmradio/fmradio.js"></script>
   </div>
 
 </div>
@@ -107,6 +107,8 @@
     core.registerModule(topbar);
     core.registerModule(content);
     core.registerModule(audio);
+
+    audio.registerSource(fmradio);
   });
 
 </script>

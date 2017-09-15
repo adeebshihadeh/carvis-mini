@@ -46,5 +46,3 @@ var fmradio = {
     this.updateFreq(this.freq);
   }
 };
-
-fmradio.init();
