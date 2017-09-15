@@ -36,7 +36,10 @@ var core = {
     this.modules.push(module);
     module.init();
   },
-  init: function() {}
+  init: function() {
+    navbar.setActiveTab("audio");
+    navbar.setHoverTab("audio");
+  }
 };
 
 
