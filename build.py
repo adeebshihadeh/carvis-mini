@@ -25,7 +25,8 @@ def getFile(filename):
   refs = re.findall('href="(.*?)"', file)
   refs += re.findall('src="(.*?)"', file)
   for ref in refs:
-    file = file.replace(ref, os.path.dirname(filename) + "/" + ref)
+    if not os.path.isfile(ref):
+      file = file.replace(ref, os.path.dirname(filename) + "/" + ref)
   return file
 
 while True:
