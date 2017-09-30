@@ -1,6 +1,5 @@
 var focus = "content";
 
-
 function updateTime() {
   var time = new Date();
   $("#statusbar-time").text(time.getHours() + ":" + (time.getMinutes() < 10 ? "0" : "") + time.getMinutes());
@@ -15,7 +14,7 @@ function setContent(content) {
 
 function changeTab(tab) {
   setContent(tab);
-  $("#menubar").children().removeClass("hover");
+  $("#menubar").children().removeClass("btn-hover");
 }
 
 function scroll(input) {
@@ -25,33 +24,24 @@ function scroll(input) {
   }
 
   if (hasFocus($("#menubar"))) {
-    if (input == "down") {
-      // shiftFocus("content");
-    } else if (input == "right" || input == "left") {
-      if (!$(".menubar-item.hover").length) {
-        $($(".menubar-item")[0]).addClass("hover");
+    if (input == "right" || input == "left") {
+      if (!$(".menubar-item.btn-hover").length) {
+        $($(".menubar-item")[0]).addClass("btn-hover");
       } else {
-        var index = $("#menubar .menubar-item.hover").index();
-        index = Math.min(Math.max(parseInt( index + (input == "right" ? 1 : -1) ), 0), $(".menubar-item").length-1);
-        $(".menubar-item").removeClass("hover");
-        $($(".menubar-item")[index]).addClass("hover");
+        var index = $("#menubar .menubar-item.btn-hover").index();
+        index = limit($(".menubar-item").length-1 , 0, index + (input == "right" ? 1 : -1));
+        $(".menubar-item").removeClass("btn-hover");
+        $($(".menubar-item")[index]).addClass("btn-hover");
       }
-    } else if (input == "select") {
-      changeTab($(".menubar-item.hover").text());
-      shiftFocus("content");
-    }
-  } else {
-    // content does a thing
-    if (input == "up") {
-      focus = "menubar";
     }
   }
-}
 
-function shiftFocus(zone) {
-  focus = zone;
-  if (focus == "content") {
-    $(".menubar-item").removeClass("hover");
+  if (input == "select") {
+    if (hasFocus($("#menubar"))) {
+      $(".btn-hover").click();
+    } else {
+      $(".scrollable-focus").click();
+    }
   }
 }
 
@@ -63,7 +53,7 @@ function shiftRowFocus(direction) {
     }
     index++;
   });
-  
+
   index += (direction == "up" ? -1 : 1);
   index = limit($(".scrollable-row:visible").length-1, 0, index);
 
@@ -72,7 +62,7 @@ function shiftRowFocus(direction) {
 }
 
 function hasFocus(el) {
-  return $(el).hasClass("scrollable-focus");
+  return $(el).hasClass("scrollable-focus") || $(el).hasClass("btn-hover");
 }
 
 function limit(max, min, val) {
@@ -88,3 +78,9 @@ $(document).ready(function() {
 
   setContent("nav");
 });
+
+
+$(".content-select").click(function() {
+  setContent($(this).text());
+});
+

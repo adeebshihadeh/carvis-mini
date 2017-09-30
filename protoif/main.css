@@ -24,7 +24,7 @@ body {
   background-color: purple;
 }
 
-.menubar-item.hover {
+.menubar-item.btn-hover {
   background-color: pink;
 }
 
@@ -50,10 +50,6 @@ body {
   border-width: 2px;
   list-style: none;
   line-height: 3.25;
-}
-
-.extras-item.hover {
-  background-color: blue;
 }
 
 .no-padding {
