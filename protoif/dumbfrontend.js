@@ -10,6 +10,7 @@ function updateTime() {
 function setContent(content) {
   $(".content").hide();
   $("#" + content + ".content").show();
+  shiftRowFocus("up");
 }
 
 function changeTab(tab) {
@@ -58,7 +59,7 @@ function shiftRowFocus(direction) {
   index = limit($(".scrollable-row:visible").length-1, 0, index);
 
   $(".scrollable-row").removeClass("scrollable-focus");
-  $($(".scrollable-row")[index]).addClass("scrollable-focus");
+  $($(".scrollable-row:visible")[index]).addClass("scrollable-focus");
 }
 
 function hasFocus(el) {
