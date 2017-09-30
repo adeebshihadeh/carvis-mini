@@ -74,6 +74,10 @@ $(document).ready(function() {
   var height = $("body").height() - ($("#statusbar").height() + $("#menubar").height());
   $("#content").css("height", height);
 
+  $(".btn-row").each(function() {
+    $(this).children().css("width", 100/$(this).children().length + "vw")
+  });
+
   updateTime();
   window.setInterval(updateTime, 2000);
 
