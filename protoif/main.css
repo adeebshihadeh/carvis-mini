@@ -40,6 +40,35 @@ body {
   margin: 0;
 }
 
+.extras-item {
+  width: 100vw;
+  text-align: center;
+  height: 100px;
+  font-size: 32px;
+  border-color: black;
+  background-color: white;
+  border-width: 2px;
+  list-style: none;
+  line-height: 3.25;
+}
+
+.extras-item.hover {
+  background-color: blue;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+
+.scrollable-focus {
+  opacity: 0.65;
+}
+
 #statusbar {
   height: 60px;
   width: 100vw;
