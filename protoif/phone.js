@@ -1,9 +1,31 @@
 var phone = {
-
+  handle_msg: function(msg) {
+    if (msg.phone.connected) {
+      if (msg.phone.incall) {
+        $("#phone-in-call").show();
+        $("#phone-dialer").hide();
+        $("#phone-not-connected").hide();
+      } else {
+        $("#phone-in-call").hide();
+        $("#phone-dialer").show();
+        $("#phone-not-connected").hide();
+      }
+    } else {
+      $("#phone-in-call").hide();
+      $("#phone-dialer").hide();
+      $("#phone-not-connected").show();
+    }
+  }
 };
 
-registerModule(phone);
+phone.handle_msg({
+  "phone": {
+    "connected": true,
+    "incall": true
+  }
+});
 
+registerModule(phone);
 
 $(".num-btn").click(function() {
   $("#phone-number-entry").append($(this).text());
