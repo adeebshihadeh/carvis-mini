@@ -1,10 +1,8 @@
-var focus = "content";
 
 function updateTime() {
   var time = new Date();
   $("#statusbar-time").text(time.getHours() + ":" + (time.getMinutes() < 10 ? "0" : "") + time.getMinutes());
 }
-
 
 
 function setContent(content) {
@@ -19,25 +17,11 @@ function changeTab(tab) {
 }
 
 function scroll(input) {
-
   if (input == "up" || input == "down") {
     shiftRowFocus(input);
-  }
-
-  if (hasFocus($("#menubar"))) {
-    if (input == "right" || input == "left") {
-      if (!$(".menubar-item.btn-hover").length) {
-        $($(".menubar-item")[0]).addClass("btn-hover");
-      } else {
-        var index = $("#menubar .menubar-item.btn-hover").index();
-        index = limit($(".menubar-item").length-1 , 0, index + (input == "right" ? 1 : -1));
-        $(".menubar-item").removeClass("btn-hover");
-        $($(".menubar-item")[index]).addClass("btn-hover");
-      }
-    }
-  }
-
-  if (input == "select") {
+  } else if (input == "right" || input == "left") {
+    shiftBtnFocus(input);
+  } else if (input == "select") {
     if (hasFocus($("#menubar"))) {
       $(".btn-hover").click();
     } else {
@@ -60,6 +44,19 @@ function shiftRowFocus(direction) {
 
   $(".scrollable-row").removeClass("scrollable-focus");
   $($(".scrollable-row:visible")[index]).addClass("scrollable-focus");
+}
+
+function shiftBtnFocus(direction) {
+  if ($(".scrollable-focus > .btn").length) {
+    if (!$(".scrollable-focus > .btn-hover").length) {
+      $($(".scrollable-focus > .btn")[0]).addClass("btn-hover");
+    } else {
+      var index = $(".scrollable-focus > .btn-hover").index();
+      index = limit($(".scrollable-focus > .btn").length-1 , 0, index + (direction == "right" ? 1 : -1));
+      $(".scrollable-focus > .btn").removeClass("btn-hover");
+      $($(".scrollable-focus > .btn")[index]).addClass("btn-hover");
+    }
+  }
 }
 
 function hasFocus(el) {

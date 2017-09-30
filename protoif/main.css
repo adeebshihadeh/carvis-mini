@@ -7,6 +7,19 @@ body {
   overflow: hidden;
 }
 
+.btn {
+  height: 80px;
+  font-size: 40px;
+  line-height: 1.75;
+  background-color: white;
+  text-align: center;
+  float: left;
+}
+
+.btn-hover {
+  background-color: blue;
+}
+
 .status-item {
   margin: 0;
   padding: 0px 15px;
@@ -21,6 +34,7 @@ body {
   height: inherit;
   text-align: center;
   font-size: 45px;
+  line-height: 1.25;
   float: left;
   background-color: purple;
 }
@@ -78,15 +92,6 @@ body {
 
 .audio-btn.btn-hover {
   background-color: blue;
-}
-
-.btn {
-  height: 80px;
-  font-size: 40px;
-  line-height: 1.75;
-  background-color: white;
-  text-align: center;
-  float: left;
 }
 
 #statusbar {
