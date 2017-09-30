@@ -28,7 +28,23 @@
   </div>
 
   <div id="audio" class="content">
-    <p class="placeholder">audio coming soon</p>
+    <!-- <p class="placeholder">audio coming soon</p> -->
+
+    <div id="audio-not-connected" style="display: none">
+      <p class="placeholder">bluetooth device not connected</p>
+    </div>
+
+    <div id="audio-player" style="text-align: center;">
+      
+      <h1 id="audio-song-title">song title</h1>
+      <h2 id="audio-song-artist">song artist</h2>
+
+      <div class="scrollable-row" style="width: 100vw; height: 80px;">
+        <btn id="audio-prev-btn" class="audio-btn"><<</btn>
+        <btn id="audio-playpause-btn" class="audio-btn">||</btn>
+        <btn id="audio-next-btn" class="audio-btn">>></btn>
+      </div>
+    </div>
   </div>
 
   <div id="phone" class="content">

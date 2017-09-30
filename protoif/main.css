@@ -31,7 +31,7 @@ body {
 .content {
   width: 100vw;
   height: inherit;
-
+  position: fixed;
 }
 
 .placeholder {
@@ -63,6 +63,20 @@ body {
 
 .scrollable-focus {
   opacity: 0.65;
+}
+
+.audio-btn {
+  width: 33.3333vw;
+  height: inherit;
+  float: left;
+  text-align: center;
+  background-color: white;
+  font-size: 40px;
+  line-height: 1.75;
+}
+
+.audio-btn.btn-hover {
+  background-color: blue;
 }
 
 #statusbar {
