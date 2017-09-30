@@ -22,8 +22,8 @@ function scroll(input) {
   } else if (input == "right" || input == "left") {
     shiftBtnFocus(input);
   } else if (input == "select") {
-    if (hasFocus($("#menubar"))) {
-      $(".btn-hover").click();
+    if ($(".scrollable-focus > .btn-hover").length) {
+      $(".scrollable-focus > .btn-hover").click();
     } else {
       $(".scrollable-focus").click();
     }
