@@ -35,20 +35,25 @@
     </div>
 
     <div id="audio-player" style="text-align: center;">
-      
       <h1 id="audio-song-title">song title</h1>
       <h2 id="audio-song-artist">song artist</h2>
 
-      <div class="scrollable-row" style="width: 100vw; height: 80px;">
-        <btn id="audio-prev-btn" class="audio-btn"><<</btn>
-        <btn id="audio-playpause-btn" class="audio-btn">||</btn>
-        <btn id="audio-next-btn" class="audio-btn">>></btn>
+      <div class="bnt-row scrollable-row">
+        <p id="audio-prev-btn" class="btn audio-btn"><<</p>
+        <p id="audio-playpause-btn" class="btn audio-btn">||</p>
+        <p id="audio-next-btn" class="btn audio-btn">>></p>
       </div>
     </div>
   </div>
 
   <div id="phone" class="content">
-    <p class="placeholder">phone coming soon</p>
+    <div id="phone-not-connected" style="display: none">
+      <p class="placeholder">phone not connected</p>
+    </div>
+    <div class="btn-row scrollable-row">
+      <p class="btn">recents</p>
+      <p class="btn">contacts</p>
+    </div>
   </div>
 
   <div id="extras" class="content">
