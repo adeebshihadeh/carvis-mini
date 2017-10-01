@@ -18,7 +18,10 @@ phone.handle_msg({
 registerModule(phone);
 
 $(".num-btn").click(function() {
-  $("#phone-number-entry").append($(this).text());
+  
+  if ($("#phone-number-entry").text().length < 25) {
+    $("#phone-number-entry").append($(this).text());
+  }
 });
 
 $("#phone-clr-btn").click(function() {
