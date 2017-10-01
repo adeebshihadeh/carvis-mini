@@ -1,0 +1,3 @@
+[submodule "protoserver/phony"]
+	path = protoserver/phony
+	url = https://github.com/littlecraft/phony.git
