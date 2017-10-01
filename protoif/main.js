@@ -14,6 +14,7 @@ var modules = [];
 
 function sendMsg(msg) {
   // send to ws server
+  
 }
 
 function registerModule(module) {
