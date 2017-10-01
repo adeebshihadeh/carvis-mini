@@ -1,21 +1,9 @@
 var phone = {
   handle_msg: function(msg) {
     if (msg.phone) {
-      if (msg.phone.connected) {
-        if (msg.phone.incall) {
-          $("#phone-in-call").show();
-          $("#phone-dialer").hide();
-          $("#phone-not-connected").hide();
-        } else {
-          $("#phone-in-call").hide();
-          $("#phone-dialer").show();
-          $("#phone-not-connected").hide();
-        }
-      } else {
-        $("#phone-in-call").hide();
-        $("#phone-dialer").hide();
-        $("#phone-not-connected").show();
-      }
+      $("#phone-in-call").toggle(msg.phone.incall);
+      $("#phone-dialer").toggle(msg.phone.connected && !msg.phone.incall);
+      $("#phone-not-connected").toggle(!msg.phone.connected);
     }
   }
 };
@@ -23,7 +11,7 @@ var phone = {
 phone.handle_msg({
   "phone": {
     "connected": true,
-    "incall": true
+    "incall": false
   }
 });
 

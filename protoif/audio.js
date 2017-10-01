@@ -15,8 +15,6 @@ var audio = {
 registerModule(audio);
 
 $("#audio-playpause-btn").click(function() {
-  // send play/pause to server
-  console.log("playpause");
   sendMsg({
     "audio": {
       "cmd": "playpause"
@@ -25,8 +23,6 @@ $("#audio-playpause-btn").click(function() {
 });
 
 $("#audio-next-btn").click(function() {
-  // send next to server
-  console.log("next");
   sendMsg({
     "audio": {
       "cmd": "next"
@@ -35,8 +31,6 @@ $("#audio-next-btn").click(function() {
 });
 
 $("#audio-prev-btn").click(function() {
-  // send prev to server
-  console.log("prev");
   sendMsg({
     "audio": {
       "cmd": "prev"
