@@ -1,3 +1,15 @@
+var frontend = {
+  handle_msg: function(msg) {
+
+  },
+  on_disconnect: function() {
+    $("#statusbar-server-status").text("server disconnected");
+  },
+  on_connect: function() {
+    $("#statusbar-server-status").text("server connected");
+  }
+};
+registerModule(frontend);
 
 function updateTime() {
   var time = new Date();

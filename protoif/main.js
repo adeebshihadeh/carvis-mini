@@ -4,6 +4,20 @@ var socket = new WebSocket("ws://127.0.0.1:13254");
 
 socket.addEventListener("open", function (event) {
   console.log("ws open");
+  for (var module in modules) {
+    if (modules[module].on_connect) {
+      modules[module].on_connect();
+    }
+  }
+});
+
+socket.addEventListener("close", function (event) {
+  console.log("ws closed");
+  for (var module in modules) {
+    if (modules[module].on_disconnect) {
+      modules[module].on_disconnect();
+    }
+  }
 });
 
 socket.addEventListener("message", function (event) {
