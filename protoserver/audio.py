@@ -4,6 +4,7 @@ import json
 class Audio:
   def get_state(self):
     state = {
+      "connected": True,
       "paused": False,
       "song": {
         "title": "title",
@@ -13,9 +14,10 @@ class Audio:
     return state
 
   def handle_msg(self, msg):
-    if msg.audio.cmd == "playpause":
+    cmd = msg["audio"]["cmd"]
+    if cmd == "playpause":
       print "playpause"
-    elif msg.audio.cmd == "next":
+    elif cmd == "next":
       print "next track"
-    elif msg.audio.cmd == "prev":
+    elif cmd == "prev":
       print "prev track"

@@ -16,6 +16,8 @@ def client_disconnect(client, server):
   print "client disconnected"
 
 def new_msg(client, server, message):
+  for module in modules:
+    module.handle_msg(json.loads(message))
   print message
 
 
@@ -30,7 +32,6 @@ def update():
   state = {}
   for module in modules:
     state[module.__class__.__name__] = module.get_state()
-  print state
   server.send_message_to_all(json.dumps(state))
 update()
 

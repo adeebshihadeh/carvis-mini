@@ -7,14 +7,16 @@ socket.addEventListener("open", function (event) {
 });
 
 socket.addEventListener("message", function (event) {
-  console.log(JSON.parse(event.data))
+  // console.log(JSON.parse(event.data))
+  for (var module in modules) {
+    modules[module].handle_msg(JSON.parse(event.data));
+  }
 });
 
 var modules = [];
 
 function sendMsg(msg) {
-  // send to ws server
-  
+  socket.send(JSON.stringify(msg));
 }
 
 function registerModule(module) {
