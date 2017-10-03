@@ -30,4 +30,9 @@ $("#phone-clr-btn").click(function() {
 
 $("#phone-dial-btn").click(function() {
   console.log("dialing: " + $("#phone-number-entry").text());
+  sendMsg({
+    "phone":{
+      "dial": $("#phone-number-entry").text()
+    }
+  });
 });
