@@ -1,7 +1,5 @@
 var frontend = {
-  handle_msg: function(msg) {
-
-  },
+  handle_msg: function(msg) {},
   on_disconnect: function() {
     $("#statusbar-server-status").text("server disconnected");
   },
@@ -97,4 +95,3 @@ $(document).ready(function() {
 $(".content-select").click(function() {
   setContent($(this).text());
 });
-
